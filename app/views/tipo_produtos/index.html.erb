@@ -22,7 +22,7 @@
             <td><%= tipo_produto.nome %></td>
             <td><%= link_to 'Mostrar', tipo_produto %></td>
         <td><%= link_to 'Editar', edit_tipo_produto_path(tipo_produto) %></td>
-        <td><%= link_to 'Apagar', tipo_produto, method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
+        <td><%= link_to 'Apagar', "/tipo_produtos/#{tipo_produto.id}/destroy", method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
       <% end %>
     </tbody>
   </table>

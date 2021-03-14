@@ -30,7 +30,7 @@
             <td><%= "R$ #{produto.valor}" %></td>
             <td><%= link_to 'Mostrar', produto %></td>
         <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
-        <td><%= link_to 'Apagar', produto, method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
+        <td><%= link_to 'Apagar', "/produtos/#{produto.id}/destroy", method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
       <% end %>
     </tbody>
   </table>
