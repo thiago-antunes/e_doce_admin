@@ -17,4 +17,24 @@
   <dt>Valor total:</dt>
   <dd><%= "R$ #{@pedido.valor_total}" %></dd>
 
+  <hr>
+
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Produto</th>
+            <th>Valor</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @pedido.pedido_produtos.each) do |pp| %>
+            <td><%= pp.produto.nome %></td>
+            <td><%= pp.produto.valor %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
 </dl>
