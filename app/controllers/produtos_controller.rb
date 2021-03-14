@@ -25,7 +25,7 @@ class ProdutosController < ApplicationController
 
     respond_to do |format|
       if @produto.save
-        format.html { redirect_to @produto, notice: "Produto was successfully created." }
+        format.html { redirect_to @produto, notice: "Produto salvo com sucesso." }
         format.json { render :show, status: :created, location: @produto }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ProdutosController < ApplicationController
   def update
     respond_to do |format|
       if @produto.update(produto_params)
-        format.html { redirect_to @produto, notice: "Produto was successfully updated." }
+        format.html { redirect_to @produto, notice: "Produto alterado com sucesso." }
         format.json { render :show, status: :ok, location: @produto }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class ProdutosController < ApplicationController
   def destroy
     @produto.destroy
     respond_to do |format|
-      format.html { redirect_to produtos_url, notice: "Produto was successfully destroyed." }
+      format.html { redirect_to produtos_url, notice: "Produto apagado com sucesso." }
       format.json { head :no_content }
     end
   end
@@ -64,6 +64,6 @@ class ProdutosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def produto_params
-      params.require(:produto).permit(:nome, :descricao, :quantidade, :tipo_produto_id)
+      params.require(:produto).permit(:nome, :descricao, :quantidade, :tipo_produto_id, :valor)
     end
 end
