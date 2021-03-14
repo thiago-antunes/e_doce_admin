@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_084821) do
+ActiveRecord::Schema.define(version: 2021_03_14_130513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "produtos", force: :cascade do |t|
+    t.string "nome"
+    t.text "descricao"
+    t.integer "quantidade"
+    t.bigint "tipo_produto_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tipo_produto_id"], name: "index_produtos_on_tipo_produto_id"
+  end
 
   create_table "tipo_produtos", force: :cascade do |t|
     t.string "nome"
@@ -21,4 +31,5 @@ ActiveRecord::Schema.define(version: 2021_03_14_084821) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "produtos", "tipo_produtos"
 end
