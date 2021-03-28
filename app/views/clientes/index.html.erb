@@ -28,7 +28,7 @@
             <td><%= cliente.email %></td>
             <td><%= link_to 'Mostrar', cliente %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Apagar', "/clientes/#{cliente.id}/destroy", method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
+        <td><%= link_to 'Apagar', "/clientes/#{cliente.id}", method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
       <% end %>
     </tbody>
   </table>

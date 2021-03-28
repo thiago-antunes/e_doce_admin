@@ -27,7 +27,7 @@ class PedidoProdutosController < ApplicationController
 
     respond_to do |format|
       if @pedido_produto.save
-        format.html { redirect_to pedido_pedido_produtos_path(@pedido), notice: "Pedido produto was successfully created." }
+        format.html { redirect_to pedido_pedido_produtos_path(@pedido), notice: "Produto adicionado ao pedido com sucesso." }
         format.json { render :show, status: :created, location: @pedido_produto }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class PedidoProdutosController < ApplicationController
   def update
     respond_to do |format|
       if @pedido_produto.update(pedido_produto_params)
-        format.html { redirect_to pedido_pedido_produtos_path(@pedido), notice: "Pedido produto was successfully updated." }
+        format.html { redirect_to pedido_pedido_produtos_path(@pedido), notice: "Produto do pedido alterado com sucesso." }
         format.json { render :show, status: :ok, location: @pedido_produto }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class PedidoProdutosController < ApplicationController
   def destroy
     @pedido_produto.destroy
     respond_to do |format|
-      format.html { redirect_to pedido_pedido_produtos_path(@pedido), notice: "Pedido produto was successfully destroyed." }
+      format.html { redirect_to pedido_pedido_produtos_path(@pedido), notice: "Produto apagado do pedido com sucesso." }
       format.json { head :no_content }
     end
   end

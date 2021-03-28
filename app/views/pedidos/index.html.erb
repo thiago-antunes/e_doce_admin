@@ -26,7 +26,7 @@
         <td><%= link_to 'Itens', pedido_pedido_produtos_path(pedido) %></td>
         <td><%= link_to 'Mostrar', pedido %></td>
         <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
-        <td><%= link_to 'Apagar', "/pedidos/#{pedido.id}/destroy", method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
+        <td><%= link_to 'Apagar', "/pedidos/#{pedido.id}", method: :delete, data: { confirm: 'Confirma exclusão?' } %></td>
       <% end %>
     </tbody>
   </table>

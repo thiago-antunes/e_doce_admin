@@ -25,7 +25,7 @@ class TipoProdutosController < ApplicationController
 
     respond_to do |format|
       if @tipo_produto.save
-        format.html { redirect_to @tipo_produto, notice: "Tipo produto salvo com sucesso." }
+        format.html { redirect_to @tipo_produto, notice: "Tipo de produto salvo com sucesso." }
         format.json { render :show, status: :created, location: @tipo_produto }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class TipoProdutosController < ApplicationController
   def update
     respond_to do |format|
       if @tipo_produto.update(tipo_produto_params)
-        format.html { redirect_to @tipo_produto, notice: "Tipo produto alterado com sucesso." }
+        format.html { redirect_to @tipo_produto, notice: "Tipo de produto alterado com sucesso." }
         format.json { render :show, status: :ok, location: @tipo_produto }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class TipoProdutosController < ApplicationController
   def destroy
     @tipo_produto.destroy
     respond_to do |format|
-      format.html { redirect_to tipo_produtos_url, notice: "Tipo produto apagado com sucesso." }
+      format.html { redirect_to tipo_produtos_url, notice: "Tipo de produto apagado com sucesso." }
       format.json { head :no_content }
     end
   end
